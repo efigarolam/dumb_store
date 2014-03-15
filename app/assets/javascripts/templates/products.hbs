@@ -1,10 +1,13 @@
 <h1>Products</h1>
-
+{{view Em.TextField valueBinding='filter'}}
+<button type="button" {{action 'applyFilter'}}>Filter by Provider</button>
+<br />
+<br />
 <table>
   <thead>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Provider</th>
+    <th {{action 'sort' 'name'}}>Name</th>
+    <th {{action 'sort' 'price'}}>Price</th>
+    <th {{action 'sort' 'provider.name'}}>Provider</th>
     <th>Created At</th>
   </thead>
   <tbody>
@@ -18,3 +21,7 @@
     {{/each}}
   </tbody>
 </table>
+
+<br />
+<br />
+
