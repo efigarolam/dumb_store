@@ -2,6 +2,13 @@
   Name: {{view Em.TextField valueBinding='name'}}
 </p>
 <p>
+  Provider: {{view Em.Select
+            content=providers
+            optionValuePath='content.id'
+            optionLabelPath='content.name'
+            }}
+</p>
+<p>
   Description: {{view Em.TextField valueBinding='description'}}
 </p>
 <p>

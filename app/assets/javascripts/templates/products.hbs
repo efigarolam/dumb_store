@@ -9,15 +9,19 @@
     <th {{action 'sort' 'price'}}>Price</th>
     <th {{action 'sort' 'provider.name'}}>Provider</th>
     <th>Created At</th>
+    <th>Actions</th>
   </thead>
   <tbody>
     {{#each}}
-      <tr>
-        <td>{{name}}</td>
-        <td>{{price}}</td>
-        <td>{{provider.name}}</td>
-        <td>{{createdAt}}</td>
-      </tr>
+      {{#if name}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{price}}</td>
+          <td>{{provider.name}}</td>
+          <td>{{friendlyDate createdAt}}</td>
+          <td><button type='button' {{action 'delete' this}}>Delete</button></td>
+        </tr>
+      {{/if}}
     {{/each}}
   </tbody>
 </table>
