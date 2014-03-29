@@ -16,6 +16,12 @@ class Api::V1::ProductsController < ApplicationController
     render json: Product.find_by(id: params[:id]).destroy, serializer: Api::V1::ProductSerializer, root: :products
   end
 
+  def update
+    product = Product.find_by(id: params[:id])
+    product.update_attributes product_params
+    render json: product, serializer: Api::V1::ProductSerializer, root: :products
+  end
+
   private
 
   def product_params

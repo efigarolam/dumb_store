@@ -3,4 +3,5 @@
 DumbStore.Router.map ()->
   @resource 'products', ->
     @route 'new'
+    @route 'edit', path: '/edit/:id'
 

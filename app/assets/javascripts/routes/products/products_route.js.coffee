@@ -7,6 +7,9 @@ DumbStore.ProductsRoute = Em.Route.extend
     controller.set('all', model)
 
   actions:
+    edit: (product) ->
+      @transitionTo('products.edit', product.get('id'))
+
     delete: (product) ->
       product.deleteRecord()
       product.save()

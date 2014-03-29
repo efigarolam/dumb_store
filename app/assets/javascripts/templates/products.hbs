@@ -13,22 +13,23 @@
   </thead>
   <tbody>
     {{#each}}
-      {{#if name}}
         <tr>
           <td>{{name}}</td>
           <td>{{price}}</td>
           <td>{{provider.name}}</td>
           <td>{{friendlyDate createdAt}}</td>
-          <td><button type='button' {{action 'delete' this}}>Delete</button></td>
+          <td>
+            <button type='button' {{action 'edit' this}}>Edit</button>
+            <button type='button' {{action 'delete' this}}>Delete</button>
+          </td>
         </tr>
-      {{/if}}
     {{/each}}
   </tbody>
 </table>
 
 <br />
 <br />
-<div id='new-product'>
+<div class='edit-or-create-products'>
   {{outlet}}
 </div>
 
